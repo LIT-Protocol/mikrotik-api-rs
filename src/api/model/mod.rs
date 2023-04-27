@@ -80,6 +80,7 @@ impl<T> From<Response<T>> for Result<T, Error> {
     fn from(response: Response<T>) -> Self {
         match response {
             Response::Reply(value) => Ok(value),
+            Response::Done => Err(Error::EndOfStream), // This isn't great, but easiest.
             Response::Trap { message, .. } => Err(Error::Remote(message)),
             _ => unreachable!(),
         }

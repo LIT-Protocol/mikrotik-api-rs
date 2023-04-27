@@ -1,11 +1,16 @@
 use std::fmt::Debug;
 use std::io;
 
+/// Error
 #[derive(Debug)]
 pub enum Error {
+    /// Incomplete response
     Incomplete,
+    /// End of stream
     EndOfStream,
+    /// Remote error
     Remote(String),
+    /// IO error
     Io(io::Error),
 }
 

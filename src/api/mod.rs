@@ -24,7 +24,7 @@ use self::{
 
 mod call;
 mod de;
-mod error;
+pub(crate) mod error;
 mod listener;
 pub(crate) mod model;
 mod read;

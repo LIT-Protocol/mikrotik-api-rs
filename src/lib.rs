@@ -80,6 +80,7 @@ pub use api::model::{
     ActiveUser, Interface, InterfaceChange, InterfaceMTU, Response, SystemResources,
 };
 pub use api::{Authenticated, Disconnected, MikrotikAPI};
+pub use api::error::Error;
 
 /// Given an address, opens a connection to the remote API service
 /// the returned object is in a Disconnected state
